@@ -51,10 +51,11 @@ Para convertir esta herramienta en un sistema completo de gestión de seguridad 
 
 ## 🛠️ Instrucciones para el Desarrollador (Gemini CLI)
 
-1. **Prioridad 1:** Implementar Firebase Auth para segregar los datos por usuario.
-2. **Prioridad 2:** Crear la colección `turnos` en Firestore para registrar aperturas y cierres.
-3. **Mantenimiento:** Mantener siempre la compresión de imágenes para no exceder los límites de Firestore (1MB).
-4. **Validación:** No permitir guardar novedades si el oficial no ha "Recibido Guardia" previamente.
+1. **Gestor de Paquetes:** Utilizar **pnpm** para todas las operaciones (pnpm install, pnpm dev, etc.).
+2. **Prioridad 1:** Implementar Firebase Auth para segregar los datos por usuario.
+3. **Prioridad 2:** Crear la colección `turnos` en Firestore para registrar aperturas y cierres.
+4. **Mantenimiento:** Mantener siempre la compresión de imágenes para no exceder los límites de Firestore (1MB). Evitar instalar dependencias heredadas de Tailwind v2/v3 como `@tailwindcss/postcss7-compat` ya que el proyecto usa Tailwind v4.
+5. **Validación:** No permitir guardar novedades si el oficial no ha "Recibido Guardia" previamente.
 
 ---
 
