@@ -161,24 +161,80 @@
   }
 }
 
-.ticks {
-  position: relative;
-  width: 100%;
+/* ESTILOS DE IMPRESIÓN PROFESIONAL */
+#print-section {
+  display: none;
+}
 
-  &::before,
-  &::after {
-    content: '';
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #print-section, #print-section * {
+    visibility: visible;
+    display: block !important;
+  }
+  #print-section {
     position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
-  }
-
-  &::before {
     left: 0;
-    border-left-color: var(--border);
+    top: 0;
+    width: 100%;
+    color: black !important;
+    background: white !important;
+    padding: 20px;
+    display: block !important;
   }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
+  .no-print {
+    display: none !important;
+  }
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-top: 20px !important;
+    display: table !important; /* Asegura comportamiento de tabla */
+  }
+  thead {
+    display: table-header-group !important;
+  }
+  tbody {
+    display: table-row-group !important;
+  }
+  tr {
+    display: table-row !important;
+  }
+  th, td {
+    display: table-cell !important;
+    border: 1px solid #000 !important;
+    padding: 10px !important;
+    text-align: left !important;
+    color: black !important;
+  }
+  th {
+    background-color: #f0f0f0 !important;
+    font-weight: bold !important;
+  }
+  .print-header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #3b82f6;
+    padding-bottom: 20px;
+  }
+  .print-header h1 {
+    font-size: 24pt;
+    margin: 0;
+    color: #1e3a8a !important;
+  }
+  .print-footer {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 12pt;
+  }
+  .total-box {
+    border: 2px solid #1e3a8a;
+    padding: 15px;
+    border-radius: 8px;
+    display: inline-block;
   }
 }
